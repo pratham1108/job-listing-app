@@ -10,9 +10,7 @@ function App() {
   const [selectedJob, setSelectedJob] = useState(null);
 
   const fetchJobs = async (location = "") => {
-    const res = await axios.get(
-      `${API_URL}?location=${location}`
-    );
+    const res = await axios.get(`${API_URL}?location=${location}`);
     setJobs(res.data);
     setSelectedJob(res.data[0] || null);
   };
@@ -22,14 +20,23 @@ function App() {
   }, []);
 
   return (
-    <div className="h-screen flex">
-      <JobList
-        jobs={jobs}
-        onSelect={setSelectedJob}
-        selectedJob={selectedJob}
-        onSearch={fetchJobs}
-      />
-      <JobDetails job={selectedJob} />
+    <div className="min-h-screen bg-gray-100">
+      <div className="max-w-7xl mx-auto h-screen grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+        {/* LEFT: Job List */}
+        <div className="md:col-span-1 bg-white rounded-lg shadow overflow-y-auto">
+          <JobList
+            jobs={jobs}
+            onSelect={setSelectedJob}
+            selectedJob={selectedJob}
+            onSearch={fetchJobs}
+          />
+        </div>
+
+        {/* RIGHT: Job Details */}
+        <div className="md:col-span-2 bg-white rounded-lg shadow overflow-y-auto">
+          <JobDetails job={selectedJob} />
+        </div>
+      </div>
     </div>
   );
 }
