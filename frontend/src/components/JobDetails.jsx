@@ -12,17 +12,11 @@ const JobDetails = ({ job }) => {
       {/* Header */}
       <div className="flex justify-between items-start mb-4">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900">
-            {job.title}
-          </h2>
+          <h2 className="text-2xl font-bold text-gray-900">{job.title}</h2>
 
-          <p className="text-gray-700 font-medium mt-1">
-            {job.company}
-          </p>
+          <p className="text-gray-700 font-medium mt-1">{job.company}</p>
 
-          <p className="text-gray-500">
-            {job.location}
-          </p>
+          <p className="text-gray-500">{job.location}</p>
         </div>
 
         <button className="bg-purple-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-purple-700">
@@ -56,13 +50,26 @@ const JobDetails = ({ job }) => {
 
       {/* Job Description */}
       <div>
-        <h3 className="font-semibold text-lg mb-2">
-          Full Job Description
-        </h3>
+        <h3 className="font-semibold text-lg mb-2">Full Job Description</h3>
         <p className="text-gray-700 leading-relaxed whitespace-pre-line">
           {job.description}
         </p>
       </div>
 
       {/* Extra Info */}
-      <
+      <div className="mt-6 space-y-2 text-sm text-gray-600">
+        <p>
+          <strong>Employment Type:</strong> {job.employment_type}
+        </p>
+        <p>
+          <strong>Experience:</strong> {job.experience_range}
+        </p>
+        <p>
+          <strong>Source:</strong> {job.source}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default JobDetails;
