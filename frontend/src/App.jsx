@@ -3,7 +3,7 @@ import axios from "axios";
 import JobList from "./components/JobList";
 import JobDetails from "./components/JobDetails";
 
-const API_URL = "http://localhost:5000/api/jobs";
+const API_URL = import.meta.env.VITE_API_URL;
 
 function App() {
   const [jobs, setJobs] = useState([]);
