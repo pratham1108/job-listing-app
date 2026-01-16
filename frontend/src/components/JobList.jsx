@@ -3,7 +3,7 @@ import SearchBar from "./SearchBar";
 
 const JobList = ({ jobs, onSelect, selectedJob, onSearch }) => {
   return (
-    <div className="w-1/3 border-r flex flex-col">
+    <div className="w-3/3 border-r flex flex-col">
       <SearchBar onSearch={onSearch} />
 
       <div className="flex-1 overflow-y-auto">

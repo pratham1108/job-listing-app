@@ -21,9 +21,9 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <div className="max-w-7xl mx-auto h-screen grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+      <div className="max-w-350 mx-auto h-screen grid grid-cols-[420px_1fr] gap-4 p-4">
         {/* LEFT: Job List */}
-        <div className="md:col-span-1 bg-white rounded-lg shadow overflow-y-auto">
+        <div className="bg-white rounded-lg shadow-sm overflow-y-auto">
           <JobList
             jobs={jobs}
             onSelect={setSelectedJob}
@@ -33,7 +33,7 @@ function App() {
         </div>
 
         {/* RIGHT: Job Details */}
-        <div className="md:col-span-2 bg-white rounded-lg shadow overflow-y-auto">
+        <div className="bg-white rounded-lg shadow-sm overflow-y-auto">
           <JobDetails job={selectedJob} />
         </div>
       </div>

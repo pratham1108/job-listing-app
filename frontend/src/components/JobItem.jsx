@@ -2,34 +2,34 @@ const JobItem = ({ job, onClick, isActive }) => {
   return (
     <div
       onClick={onClick}
-      className={`p-4 cursor-pointer border-b transition ${
+      className={`p-4 border-b cursor-pointer transition ${
         isActive
           ? "border-l-4 border-purple-600 bg-purple-50"
           : "hover:bg-gray-50"
       }`}
     >
       {/* Job Title */}
-      <h3 className="text-blue-700 font-semibold text-base leading-snug">
+      <h3 className="text-blue-700 font-semibold leading-snug">
         {job.title}
       </h3>
 
-      {/* Company + Location */}
+      {/* Company & Location */}
       <p className="text-sm text-gray-700 mt-1">
         {job.company} — {job.location}
       </p>
 
-      {/* Short Description */}
-      <p className="text-sm text-gray-500 mt-1 line-clamp-2">
-        {job.description}
+      {/* Source */}
+      <p className="text-xs text-gray-500 mt-1 capitalize">
+        Source: {job.source}
       </p>
 
-      {/* Salary + Action */}
+      {/* Bottom Row */}
       <div className="flex justify-between items-center mt-3">
-        <span className="text-sm font-medium text-gray-800">
-          {job.salary}
+        <span className="text-sm text-gray-600">
+          {job.experience || `${job.min_exp}-${job.max_exp} yrs`}
         </span>
 
-        <span className="text-sm text-purple-600 font-semibold">
+        <span className="text-sm font-semibold text-purple-600">
           Quick Apply
         </span>
       </div>
